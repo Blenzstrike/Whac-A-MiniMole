@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: EasyDifficulty
   m_EditorClassIdentifier: 
   Name: Easy
-  AmountOfHoles: 3
-  ObjectSpawnSpeed: 1
-  MmoleObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  UnlockWord: 
+  OptionImage: {fileID: 0}
+  HoleLayout: {fileID: 2770801702242377876, guid: e33a2eda1e53faf449a5c18e1052fae6, type: 3}
+  ObjectSpawnSpeedMultiplier: 1
+  MoleObjects:
+  - {fileID: 11400000, guid: be6b9a4475c77c847953f6c188a75860, type: 2}
+  - {fileID: 11400000, guid: e8cbc189f55c49a4aa4ec821ed631d72, type: 2}
+  GameTimeInSeconds: 10

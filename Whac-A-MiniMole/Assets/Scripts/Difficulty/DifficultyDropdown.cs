@@ -25,12 +25,39 @@ public class DifficultyDropdown : MonoBehaviour
 
         difficultyTMPDropdown.AddOptions(_newOptions);
         difficultyTMPDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
-        CurrentDifficultyClass = difficultyClasses[0];
+        if (PlayerInformation.SelectedDifficulty != null)
+        {
+            for (int i = 0; i < difficultyClasses.Count; i++)
+            {
+                if (difficultyClasses[i] == PlayerInformation.SelectedDifficulty)
+                {
+                    CurrentDifficultyClass = difficultyClasses[i];
+                    difficultyTMPDropdown.SetValueWithoutNotify(i);
+                }
+            }
+        }
+        else
+        {
+            CurrentDifficultyClass = difficultyClasses[0];
+        }
     }
 
     private void OnDropdownValueChanged(int _index)
     {
         if(_index > difficultyClasses.Count) { Debug.LogError("Value selected bigger than difficulty classes list"); }
         CurrentDifficultyClass = difficultyClasses[_index];
+    }
+
+    public DifficultyClass GetDifficultyClassOnName(string pName)
+    {
+        foreach (DifficultyClass _difficultyClass in difficultyClasses)
+        {
+            if(_difficultyClass.name == pName)
+            {
+                return _difficultyClass;
+            }
+        }
+
+        return null;
     }
 }

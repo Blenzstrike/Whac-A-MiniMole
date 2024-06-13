@@ -7,8 +7,8 @@ public class DifficultyClass : ScriptableObject
 {
     public string Name;
     public Sprite OptionImage;
-    public int AmountOfHoles;
-    public float ObjectSpawnSpeed;
-    public List<MoleObjectClass> MmoleObjects;
-    public string UnlockWord;
+    public GameObject HoleLayout;
+    public float ObjectSpawnSpeedMultiplier;
+    public List<MoleObjectDataClass> MoleObjects;
+    public int GameTimeInSeconds;
 }

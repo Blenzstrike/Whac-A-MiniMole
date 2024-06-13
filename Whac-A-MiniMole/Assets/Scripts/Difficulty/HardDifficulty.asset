@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hard
   OptionImage: {fileID: 0}
-  AmountOfHoles: 7
-  ObjectSpawnSpeed: 2
-  MmoleObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  UnlockWord: 
+  HoleLayout: {fileID: 2824580748050829025, guid: 0c9a1f1e00b7d9646a66a761a2403c79, type: 3}
+  ObjectSpawnSpeedMultiplier: 2
+  MoleObjects:
+  - {fileID: 11400000, guid: be6b9a4475c77c847953f6c188a75860, type: 2}
+  - {fileID: 11400000, guid: e8cbc189f55c49a4aa4ec821ed631d72, type: 2}
+  - {fileID: 11400000, guid: a4f67c2b0399e3f47ad1ee5c3dcd5ebb, type: 2}
+  - {fileID: 11400000, guid: 4de5a4837063a1d43a8d63f3f51331b4, type: 2}
+  GameTimeInSeconds: 45
