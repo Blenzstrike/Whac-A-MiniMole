@@ -49,13 +49,13 @@ public class HighscoreScreen : GameState
         {
             switch (_highScoreItem.DifficultyName)
             {
-                case "Easy":
+                case "EasyDifficulty":
                     _easyHighscoreList.Add((_highScoreItem.Name, _highScoreItem.Score.ToString()));
                     break;
-                case "Medium":
+                case "MediumDifficulty":
                     _mediumHighscoreList.Add((_highScoreItem.Name, _highScoreItem.Score.ToString()));
                     break;
-                case "Hard":
+                case "HardDifficulty":
                     _hardHighscoreList.Add((_highScoreItem.Name, _highScoreItem.Score.ToString()));
                     break;
             }
