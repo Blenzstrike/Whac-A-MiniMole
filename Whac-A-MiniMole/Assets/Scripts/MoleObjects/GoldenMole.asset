@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7288a26eb7926844b826f80463611e9c, type: 3}
   m_Name: GoldenMole
   m_EditorClassIdentifier: 
-  ObjectVisualizations: {fileID: 0}
+  ObjectVisualizations: {fileID: 7020179057018322497, guid: 43360b9ce6aa74448b0c6939d04e29a1, type: 3}
   AliveTimerInSeconds: 2
   TapScore: 100
   SpawnChance: 5
