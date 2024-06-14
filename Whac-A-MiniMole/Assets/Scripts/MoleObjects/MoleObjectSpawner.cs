@@ -1,18 +1,41 @@
-using Newtonsoft.Json.Bson;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that spawns a mole on a specified selection of holes.
+/// </summary>
 public class MoleObjectSpawner : MonoBehaviour
 {
-    private float baseObjectSpawnSpeedInSeconds = 3;
-    [SerializeField] private List<GameObject> molesHoles;
-    private float elapsedTime = 0;
+    /// <summary>
+    /// Wether this object can spawn moles.
+    /// </summary>
     [HideInInspector] public bool IsSpawning = false;
+    /// <summary>
+    /// List of holes that are available.
+    /// </summary>
+    [SerializeField] private List<GameObject> molesHoles;
+    /// <summary>
+    /// Base value for time between spawns in seconds.
+    /// </summary>
+    private float baseObjectSpawnSpeedInSeconds = 3;
+    /// <summary>
+    /// Time in seconds since last spawn.
+    /// </summary>
+    private float elapsedTime = 0;
+    /// <summary>
+    /// Multiplier on the spawn speed based on the difficulty. The higher the multiplier the more frequint the spawns.
+    /// </summary>
     private float ObjectSpawnSpeedMultiplier = 1;
+    /// <summary>
+    /// List of objects to spawn based on the chance they should appear.
+    /// </summary>
     private List<(int topValueChance, MoleObjectDataClass objectToSpawn)> weightedSpawnObjectList = new List<(int topValueChance, MoleObjectDataClass objectToSpawn)> ();
 
+    /// <summary>
+    /// Sets the data required to spawn objects.
+    /// </summary>
+    /// <param name="pSpawnMultiplier">Multiplier on the spawn speed based on the difficulty</param>
+    /// <param name="pObjectsToSpawn">List of object that can be spawned</param>
     public void SetSpawnData(float pSpawnMultiplier, List<MoleObjectDataClass> pObjectsToSpawn)
     {
         CreateWeightedList(pObjectsToSpawn);
@@ -60,7 +83,6 @@ public class MoleObjectSpawner : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (IsSpawning)
@@ -81,10 +103,16 @@ public class MoleObjectSpawner : MonoBehaviour
 
         MoleObjectDataClass _desiredMoleObject = GetCorrectObjectFromWeightedList(_moleIndex);
         MoleObjectController _moleObjectController = Instantiate(_desiredMoleObject.ObjectVisualizations, molesHoles[_moleHoleIndex].transform).GetComponent<MoleObjectController>();
+        
         _moleObjectController.TapScore = _desiredMoleObject.TapScore;
         _moleObjectController.LiveTimerInSeconds = _desiredMoleObject.AliveTimerInSeconds;
     }
 
+    /// <summary>
+    /// Gets object from the weighted list based on a value between 0-100. 
+    /// </summary>
+    /// <param name="pIndex"></param>
+    /// <returns></returns>
     private MoleObjectDataClass GetCorrectObjectFromWeightedList(int pIndex)
     {
         for(int i = 0; i < weightedSpawnObjectList.Count; i++)

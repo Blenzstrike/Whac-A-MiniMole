@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Extention to the base mole that zigzags aswell.
+/// </summary>
 public class ZigZaggingMoleObjectController : MoleObjectController
 {
     private bool goingRight = true;
