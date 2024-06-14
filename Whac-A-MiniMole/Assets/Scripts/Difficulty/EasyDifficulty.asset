@@ -19,4 +19,4 @@ MonoBehaviour:
   MoleObjects:
   - {fileID: 11400000, guid: be6b9a4475c77c847953f6c188a75860, type: 2}
   - {fileID: 11400000, guid: e8cbc189f55c49a4aa4ec821ed631d72, type: 2}
-  GameTimeInSeconds: 10
+  GameTimeInSeconds: 30

@@ -21,4 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8cbc189f55c49a4aa4ec821ed631d72, type: 2}
   - {fileID: 11400000, guid: a4f67c2b0399e3f47ad1ee5c3dcd5ebb, type: 2}
   - {fileID: 11400000, guid: 4de5a4837063a1d43a8d63f3f51331b4, type: 2}
-  GameTimeInSeconds: 45
+  GameTimeInSeconds: 50
