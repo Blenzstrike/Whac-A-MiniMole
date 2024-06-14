@@ -1,13 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script incharge of the timer in the game.
+/// </summary>
 public class TimeHandler : MonoBehaviour
 {
     [SerializeField] private Text timeText;
     private bool isRunning = false;
+    /// <summary>
+    /// Time elapsed since the last second.
+    /// </summary>
     private float elapsedtime = 0;
     private int TimeLeft;
     public UnityEvent OnGameStop;

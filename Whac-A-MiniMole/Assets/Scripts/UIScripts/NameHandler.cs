@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
+/// <summary>
+/// Class that handles the field that sets the user name.
+/// </summary>
 public class NameHandler : MonoBehaviour
-{
+{ 
     private TMP_InputField textField;
-    // Start is called before the first frame update
+
     void OnEnable()
     {
         textField = GetComponent<TMP_InputField>();
