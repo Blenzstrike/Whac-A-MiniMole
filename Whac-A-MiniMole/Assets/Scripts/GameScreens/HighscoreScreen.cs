@@ -1,9 +1,11 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using static StateHandler;
 
+/// <summary>
+/// State class for the Highscore screen.
+/// </summary>
 public class HighscoreScreen : GameState
 {
     [SerializeField] private Button ContinueButton;
@@ -38,6 +40,9 @@ public class HighscoreScreen : GameState
         StateHandler.OnStateSwitch.Invoke(GameStates.HighScore, GameStates.MainMenu);
     }
 
+    /// <summary>
+    /// Takes the saved highscore list and defides it into list for each difficulity.
+    /// </summary>
     private void CreateAndSetHighScoreLists()
     {
         List<SavedHighscoreItem> _savedHighscoreList = PlayerInformation.SaveGameInformation.SavedHighscoreItems;
@@ -45,6 +50,7 @@ public class HighscoreScreen : GameState
         List<(string, string)> _mediumHighscoreList = new List<(string, string)>();
         List<(string, string)> _hardHighscoreList = new List<(string, string)>();
 
+        //Go through each item and put it in the corrosponding list. The earlier the score is in the list the higher the score is.
         foreach(SavedHighscoreItem _highScoreItem in _savedHighscoreList)
         {
             switch (_highScoreItem.DifficultyName)

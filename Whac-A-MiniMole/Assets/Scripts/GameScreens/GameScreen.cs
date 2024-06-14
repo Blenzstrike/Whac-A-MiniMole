@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using static StateHandler;
 
+/// <summary>
+/// State class for the Game screen.
+/// </summary>
 public class GameScreen : GameState
 {
     [SerializeField] private HoleSpawner holeSpawner;
@@ -31,9 +31,14 @@ public class GameScreen : GameState
         timeHandler.OnGameStop.RemoveListener(OnGameStop);
     }
 
+    /// <summary>
+    /// Starts the holespawner to create the holes from which the moles will spring. 
+    /// </summary>
     public void SpawnHoles()
     {
+        //Create the holes required and gets the newly created mole object spawner.
         currentMoleObject = holeSpawner.SpawnHoles(selectedDifficulty.HoleLayout).GetComponent<MoleObjectSpawner>();
+        //Set the difficulty specific infromation to the MoleSpawner.
         currentMoleObject.SetSpawnData(selectedDifficulty.ObjectSpawnSpeedMultiplier, selectedDifficulty.MoleObjects);
         currentMoleObject.IsSpawning = true;
     }

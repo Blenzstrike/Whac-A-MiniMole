@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using static StateHandler;
 
+/// <summary>
+/// State class for the Main menu screen.
+/// </summary>
 public class MainMenu : GameState
 {
     [SerializeField] private Button startGameButton;
