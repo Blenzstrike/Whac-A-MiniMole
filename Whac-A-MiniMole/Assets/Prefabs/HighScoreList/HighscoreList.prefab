@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 8190542302555784846}
   - component: {fileID: 4045835753865556458}
   m_Layer: 5
-  m_Name: EasyHighscoreList
+  m_Name: HighscoreList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
