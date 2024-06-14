@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class ScoreSetter : MonoBehaviour
 {
     private Text scoreText;
-    private int lastScore;
+    private int lastScore = 0;
     private void OnEnable()
     {
         scoreText = GetComponent<Text>();
+        scoreText.text = lastScore.ToString();
     }
 
     // Update is called once per frame

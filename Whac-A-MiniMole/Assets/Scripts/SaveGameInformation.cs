@@ -40,10 +40,10 @@ public class SaveGameInformation
         else
         {
             bool _hasBeenInserted = false;
-            //Go through all the items in the list and check if the score at that position is higher that the score gotten. If it is not we put this score at that index.
+            //Go through all the items in the list and check if the score at that position is higher or the same as the score the user got this time. If it is not we put this score at that index.
             for (int i = 0; i < SavedHighscoreItems.Count; i++)
             {
-                if (SavedHighscoreItems[i].Score < pScore)
+                if (SavedHighscoreItems[i].Score <= pScore)
                 {
                     SavedHighscoreItems.Insert(i, new SavedHighscoreItem(pName, pScore, pDifficultyName));
                     _hasBeenInserted = true;

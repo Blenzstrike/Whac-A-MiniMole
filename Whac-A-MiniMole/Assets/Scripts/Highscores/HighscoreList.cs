@@ -5,8 +5,15 @@ using UnityEngine;
 public class HighscoreList : MonoBehaviour
 {
     [SerializeField] private GameObject highScoreListItem;
-    [SerializeField] private Transform contentZone;
+    [SerializeField] private RectTransform contentZone;
+    
     private List<GameObject> activeHighscoreList = new List<GameObject>();
+    private RectTransform highscoreItemRectTransform;
+
+    private void Awake()
+    {
+        highscoreItemRectTransform = highScoreListItem.GetComponent<RectTransform>();
+    }
 
     public void SetHighscoreLists(List<(string pName, string pScore)> pHighscoreList)
     {
@@ -23,6 +30,8 @@ public class HighscoreList : MonoBehaviour
                 activeHighscoreList.Add(_newHighscoreItem);
             }
         }
+
+        contentZone.sizeDelta = new Vector2(contentZone.sizeDelta.x, activeHighscoreList.Count * highscoreItemRectTransform.sizeDelta.y);
     }
 
     public void ClearHighscore()
