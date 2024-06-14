@@ -23,6 +23,7 @@ public class EndScreen : GameState
     protected override void OnExitThisState()
     {
         ContinueButton.onClick.RemoveListener(OnContinuePress);
+        PlayerInformation.Score = 0;
         gameObject.SetActive(false);
     }
 

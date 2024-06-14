@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using static TMPro.TMP_Dropdown;
 
+/// <summary>
+/// Dropdown menu for difficulty in the Main Menu
+/// </summary>
 public class DifficultyDropdown : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown difficultyTMPDropdown;
@@ -13,12 +16,15 @@ public class DifficultyDropdown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       if(difficultyTMPDropdown == null) { Debug.LogError("No difficulty Dropdown selected"); return; }
-       if (difficultyClasses == null || difficultyClasses.Count == 0) { Debug.LogError("No difficultyClasses assigned"); return; }
+        // Make sure the difficulty can be assinged.
+        if(difficultyTMPDropdown == null) { Debug.LogError("No difficulty Dropdown selected"); return; }
+        if (difficultyClasses == null || difficultyClasses.Count == 0) { Debug.LogError("No difficultyClasses assigned"); return; }
 
+        //Clear already existing options
         difficultyTMPDropdown.ClearOptions();
 
         List<OptionData> _newOptions = new List<OptionData>();
+        
         foreach (DifficultyClass difficultyClass in difficultyClasses) { 
             _newOptions.Add(new OptionData(difficultyClass.Name, difficultyClass.OptionImage));
         }

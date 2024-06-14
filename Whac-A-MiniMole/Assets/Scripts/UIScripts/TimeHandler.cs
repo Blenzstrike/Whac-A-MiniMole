@@ -18,6 +18,7 @@ public class TimeHandler : MonoBehaviour
         if (PlayerInformation.SelectedDifficulty == null) { return; }
         TimeLeft = PlayerInformation.SelectedDifficulty.GameTimeInSeconds;
         timeText.text = TimeLeft.ToString();
+        elapsedtime = 0;
         isRunning = true;
     }
 
