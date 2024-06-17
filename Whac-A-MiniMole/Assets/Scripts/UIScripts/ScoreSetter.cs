@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script that set the score on an object that has a text aswell. 
+/// </summary>
 public class ScoreSetter : MonoBehaviour
 {
     private Text scoreText;

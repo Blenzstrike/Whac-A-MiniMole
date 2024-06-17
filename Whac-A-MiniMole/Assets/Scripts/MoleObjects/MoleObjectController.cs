@@ -1,17 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Base class that controls all mole objects. 
+/// </summary>
 public class MoleObjectController : MonoBehaviour
 {
+    /// <summary>
+    /// Time that the mole needs to stay alive
+    /// </summary>
     [HideInInspector] public float LiveTimerInSeconds;
+    /// <summary>
+    /// Score that you get if tapped
+    /// </summary>
     [HideInInspector] public int TapScore;
+    /// <summary>
+    /// Time that has passed in seconds since the start of the run.
+    /// </summary>
     protected float elapsedTime = 0;
+    /// <summary>
+    /// Wether the object is moving up or down.
+    /// </summary>
     protected bool isJumping = true;
+    /// <summary>
+    /// Movement speed of the object.
+    /// </summary>
     protected float movementSpeed = 3;
 
-    // Start is called before the first frame update
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(OnObjectSelected);

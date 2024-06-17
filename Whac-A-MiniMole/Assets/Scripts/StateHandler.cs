@@ -1,8 +1,8 @@
-using TMPro;
-using UnityEditor;
-using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Holds the information of the states in the game.
+/// </summary>
 public static class StateHandler
 {
     public enum GameStates
